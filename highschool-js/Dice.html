@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="EN-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll</title>
+    <style>
+        body {
+            color: yellow;
+            background-image: url(http://www.photohdx.com/images/2015/11/green-velvet-texture-background.jpg);
+            font-family: helvetica;
+            background-color: green;
+        }
+        
+        .dice1 {
+            color: black;
+            position: absolute;
+            border-radius: 15px;
+            background-color: whitesmoke;
+            font-size: 40px;
+            top: 350px;
+            height: 90px;
+            width: 90px;
+        }
+        
+        .diceText {
+            margin: 11px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 35px;
+        }
+        
+        .dice2 {
+            color: black;
+            position: absolute;
+            border-radius: 15px;
+            background-color: whitesmoke;
+            font-size: 40px;
+            top: 350px;
+            height: 90px;
+            width: 90px;
+            left: 150px;
+        }
+        
+        #Die1Num {
+            font-size: 25px;
+            position: absolute;
+        }
+        
+        #Die2Num {
+            font-size: 25px;
+            position: absolute;
+            left: 150px;
+        }
+        
+        .MoneyArea {
+            float: right;
+            position: fixed;
+            right: 55px;
+            top: 5px;
+            background-color: lightgreen;
+            border-radius: 15px;
+            padding: 10px;
+        }
+        
+        a:link {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LHS Casino</h1>
+    <h2>We have Dice and Slot Machines</h2>
+    <h3><a style="background-color: lightgreen; border-radius: 15px; padding: 5px; color: black;" href="Slots.html">Click me to goto the Slot Machines</a></h3>
+    <br>
+    <div class="MoneyArea">
+        <h3 id="MoneyID" style="color: darkgreen;">You Have: $500</h3>
+        <p id="MoreMoney"></p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        </form>
+    </div>
+    <h3>CLICK THE DICE TO BEGIN</h3>
+    <h4>$25 to Roll Dice</h4>
+    <p>Call the Number you will roll to win BIG</p>
+    <input id="UserCall" type="number" placeholder="6" max="6" min="1">
+    <p id="Die1Num"></p>
+    <div class="dice1" onclick="rollDice()">
+        <p class="diceText" id="Die1"><b>Die 1</b></p>
+    </div>
+    <p id="Die2Num"></p>
+    <div class="dice2" onclick="rollDice()">
+        <p class="diceText" id="Die2"><b>Die 2</b></p>
+    </div>
+    <p style="top: 450px; position: absolute;"><u>How To Win:</u></p>
+    <ul style="top: 470px; position: absolute;">
+        <li>Win Dubble With Your Called Number - Win $500</li>
+        <li>Dubble - Win $250</li>
+        <li>Roll On Of Your Call Numbers - Win $100</li>
+    </ul>
+</body>
+
+<footer>
+    <script src="Money.js"></script>
+    <script>
+        var Roll1 = 0;
+        var Roll2 = 0;
+        function rollDice() {
+            if (MoneyValue <= 74) {
+                alert("Your Broke! You can no longer play. (Try Reloading the page.)")
+                document.getElementById("MoreMoney").innerHTML = "Perhaps a donation can put more money in your LHS Casnio Account";
+            } else {
+                MoneyValue = MoneyValue - 75;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+                Dice1();
+                Dice2();
+                Winner();
+            }
+        }
+
+        function Dice1() {
+            var Die1Input = "";
+            Roll1 = Math.ceil(Math.random() * 6);
+            for (var i = 0; i < Roll1; i += 1) {
+                Die1Input = Die1Input + "•";
+            }
+            var Die1Length = Die1Input.length;
+            if (Die1Length > 3) {
+                Die1Input = Die1Input.substring(0, 3) + "<br>" + Die1Input.substring(3, Die1Length);
+            }
+            document.getElementById("Die1").innerHTML = Die1Input;
+            document.getElementById("Die1Num").innerHTML = Roll1;
+        }
+
+        function Dice2() {
+            var Die2Input = "";
+            Roll2 = Math.ceil(Math.random() * 6);
+            for (var i = 0; i < Roll2; i += 1) {
+                Die2Input = Die2Input + "•";
+            }
+            var Die2Length = Die2Input.length;
+            if (Die2Length > 3) {
+                Die2Input = Die2Input.substring(0, 3) + "<br>" + Die2Input.substring(3, Die2Length);
+            }
+            document.getElementById("Die2").innerHTML = Die2Input;
+            document.getElementById("Die2Num").innerHTML = Roll2;
+        }
+        
+        function Winner() {
+            console.log(document.getElementById("UserCall").value);
+            if ((document.getElementById("UserCall").value == Roll1) && (document.getElementById("UserCall").value == Roll2)) {
+                MoneyValue = MoneyValue + 500;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+            } else if (Roll1 == Roll2) {
+                MoneyValue = MoneyValue + 250;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+            } else if ((document.getElementById("UserCall").value == Roll1) || (document.getElementById("UserCall").value == Roll2)) {
+                MoneyValue = MoneyValue + 100;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+            }
+        }
+    </script>
+</footer>
+
+</html>

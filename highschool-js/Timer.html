@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 12;
+        }
+
+        .Title {
+            text-align: center;
+        }
+
+        .Time {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="Title">Analog Timer</h1>
+    <br>
+    <br>
+    <h1 class="Time" id="TimeText">00:00:00</h1>
+    <br>
+    <br>
+    <p>Enter Timer Time</p>
+    H:<input type="number" value="00" id="Hour"> M:<input type="number" value="05" id="Minute" max="60"> S:<input type="number" value="00" id="Seconds" max="60">
+    <br>
+    <br>
+    <button onclick="Start()">Start</button>
+    <button onclick="setInterval(x, 1000)">Continue</button>
+    <button onclick="clearInterval(x)">Stop</button>
+    <script>
+        var x = null;
+
+        function Start() {
+            clearInterval(x);
+            var Hr = document.getElementById("Hour").value;
+            Hr = Hr * 60 * 60 * 1000;
+            var Min = document.getElementById("Minute").value;
+            Min = Min * 60 * 1000;
+            var Sec = document.getElementById("Seconds").value;
+            Sec = Sec * 1000;
+            var Der = Hr + Min + Sec;
+
+            var countDownDate = new Date().getTime() + Der;
+
+            // Update the count down every 1 second
+            x = setInterval(function ClockTimer() {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24))
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the element with id="demo"
+                document.getElementById("TimeText").innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("TimeText").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+
+            // ClockTime = setInterval(Clock, 1000);
+            //
+            // function Clock() {
+            //     var d = new Date;
+            //     document.getElementById("TimeText").innerHTML = d.toLocaleTimeString();
+            // }
+            //
+            // var Time = Hr + ":" + Min + ":" + Sec;
+            // //document.getElementById("TimeText").innerHTML = Time;
+        }
+    </script>
+</body>

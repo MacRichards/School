@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="US-EN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4</title>
+    <style>
+        body {
+            background-color: #DCDCDC;
+            font-family: helvetica;
+        }
+        
+        p {
+            font-size: 110%;
+        }
+        
+        a:link {
+            text-decoration: none;
+            color: lightgray;
+        }
+        
+        #Header {
+            border-radius: 25px;
+            padding: 20px;
+            top: 0px;
+            text-align: center;
+            background-color: #A9A9A9;
+        }
+        
+        #Left {
+            top: 150px;
+            position: absolute;
+            left: 10px;
+            right: 53%;
+        }
+        
+        #Right {
+            top: 150px;
+            position: absolute;
+            right: 10px;
+            left: 53%;
+        }
+        
+        #box {
+            border-radius: 15px;
+            padding: 5px;
+            background-color: #CDCDCD;
+            box-shadow: 10px 10px 5px #888888
+        }
+        
+        #box:hover {
+            padding: 8px;
+            box-shadow: 15px 15px 10px #888888;
+        }
+    </style>
+    <script>
+        function tryItOut() {
+            alert("Hello!");
+        }
+    </script>
+</head>
+
+<body>
+    <div id="Header">
+        <h1>My 7 Favirate Css Properties</h1>
+    </div>
+    <div id="Left">
+        <div id="box">
+            <h2>#1 - Color</h2>
+            <p style="Color:lightcoral">Color is one of the hardest one's to use in my opinoin but it all pay offs in the end. After you get the color skem put together and it looks half desent then your doing pretty good.</p>
+            <p>Example: style="Color:lightcoral"</p>
+        </div>
+        <p></p>
+        <div id="box">
+            <h2>#3 - Position</h2>
+            <p>Using position you can do many useful things. The one I use the most is absolute what alows me to put 2 div tags side by side.</p>
+            <p>Example: #Left{ position: absolute }</p>
+        </div>
+        <p></p>
+        <div id="box">
+            <h2>#5 - Top, Bottom, Left, and Right</h2>
+            <p>Top, Bottom, Left, and Right allows you to have content stick to a part of the website.</p>
+            <p>Example: #Right { right 0px; left: 50% }</p>
+        </div>
+        <p></p>
+        <div id="box">
+            <h2>#7 - Links</h2>
+            <p><a href="http://www.google.com">Links</a> are useful to link to another webstie or page.</p>
+            <p>Example: a href="www.google.com"</p>
+        </div>
+    </div>
+    <div id="Right">
+        <div id="box">
+            <h2>#2 - Images</h2>
+            <p>Images is good to add more to your website. You can use Images to add any picture to your website you wish and do pretty much anything with it.</p>
+            <a href="http://www.google.com" target="_blank"><img style="width:32px; hight:32px;" src="https://cdn.pixabay.com/photo/2015/10/31/12/56/google-1015752_960_720.png"></a>
+            <p>Example: pic src="www.URL.com/picture"</p>
+        </div>
+        <p></p>
+        <div id="box">
+            <h2>#4 - Buttons</h2>
+            <p>Buttons are useful when you want a more apling click able then just text.</p>
+            <button onclick="tryItOut()" type="button">Try Me Out</button>
+            <p>Example: button onlick="myFunction()" type="button"</p>
+        </div>
+        <p></p>
+        <div id="box">
+            <h2>#6 - Border Radius</h2>
+            <p>With border radius I can make the reugalr boxes have round corners.</p>
+        </div>
+    </div>
+</body>
+
+</html>

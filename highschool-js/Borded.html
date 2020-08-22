@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!-----------------------------------------------------------------------
+
+                         Bordem - pre Alpha v.2
+                          © 2017 Mac Richards
+
+------------------------------------------------------------------------>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What I Made #Bored</title>
+    <style>
+        body {
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <input id="Input" placeholder="Bob Smith" type="text">
+    <button onclick="RunHello()">Click Me</button>
+    <p id="Output"></p>
+    <script type="text/javascript">
+        function RunHello() {
+            console.log("Got Here");
+            var UserInput = document.getElementById("Input").value;
+            document.getElementById("Output").innerHTML = "Hello " + UserInput + ". How are you doing?";
+        };
+    </script>
+</body>

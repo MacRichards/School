@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin to Win</title>
+    <style type="text/css">
+        body {
+            color: yellow;
+            font-family: helvetica;
+            background-image: url(http://www.photohdx.com/images/2015/11/green-velvet-texture-background.jpg);
+            background-color: green;
+        }
+        
+        .inputArea {
+            border-radius: 13px;
+            /*background-image: url(http://www.hillwoodproducts.com/wp-content/uploads/2015/03/wood1.jpg);
+            background-color: burlywood;*/
+            padding: 12px;
+        }
+        
+        .inputArea ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+        
+        .inputArea li {
+            float: left;
+        }
+        
+        .inputArea li a {
+            position: absolute;
+            display: block;
+            text-align: center;
+            align-content: center;
+            text-decoration: none;
+        }
+        
+        .inputArea p {
+            border-color: white;
+            border-width: 3px;
+            border-style: ridge;
+            border-radius: 13px;
+            padding: 16px;
+        }
+        
+        #inputWinner {
+            margin-left: 30px;
+        }
+        
+        #inputWinnerprez {
+            margin-left: 30px;
+        }
+        
+        #inWinner {
+            margin-left: 30px;
+        }
+        
+        img {
+            height: 100px;
+            width: auto;
+        }
+        
+        .slotimg {}
+        
+        .MoneyArea {
+            float: right;
+            position: fixed;
+            right: 55px;
+            top: 5px;
+            background-color: lightgreen;
+            border-radius: 15px;
+            padding: 10px;
+        }
+        
+        a:link {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LHS Casino</h1>
+    <h2>We have Dice and Slot Machines</h2>
+    <h3><a style="background-color: lightgreen; border-radius: 15px; padding: 5px; color: black;" href="Dice.html">Click me to goto the Dice Game</a></h3>
+    <br>
+    <div class="MoneyArea">
+        <h3 id="MoneyID" style="color: darkgreen;">You Have: $500</h3>
+        <p id="MoreMoney"></p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHPwYJKoZIhvcNAQcEoIIHMDCCBywCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAL0vv7AslvQcKRiUCN0KzwqyEZjGGfoGfskXCMQCQ8YJdKqHfJxOr/ruKYGUpMqIj4ykYW+JDhqBihQdCFSgftyCX7w1NAzUTIJKIiGFjetNtVGrFpJuG0cW92sSIpievXe0+3xoSEEfqlSre/qnRp2auVv8K5MujAvjjViDWIiTELMAkGBSsOAwIaBQAwgbwGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIPnB+XQy/f7uAgZgSlD2kPT8B8qRuQhnirqSNBQ1CnKrpi/pyFlLDdqdPssyInAK2trJ5AoJuXG5pGKzz0D+ZlQbZ6zpJ91V4FhYbg9DKxMUfP/WEVg9zmSSmj2C1WI8LpIa04zG+NMhA8tsxJevhpU4SP3RO5ia4/0ObNfOXdpiJRkexo+0bP77Yyr3gg7GPP1X7hp6mQoXYqd1w3UPoCz57xaCCA4cwggODMIIC7KADAgECAgEAMA0GCSqGSIb3DQEBBQUAMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTAeFw0wNDAyMTMxMDEzMTVaFw0zNTAyMTMxMDEzMTVaMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwUdO3fxEzEtcnI7ZKZL412XvZPugoni7i7D7prCe0AtaHTc97CYgm7NsAtJyxNLixmhLV8pyIEaiHXWAh8fPKW+R017+EmXrr9EaquPmsVvTywAAE1PMNOKqo2kl4Gxiz9zZqIajOm1fZGWcGS0f5JQ2kBqNbvbg2/Za+GJ/qwUCAwEAAaOB7jCB6zAdBgNVHQ4EFgQUlp98u8ZvF71ZP1LXChvsENZklGswgbsGA1UdIwSBszCBsIAUlp98u8ZvF71ZP1LXChvsENZklGuhgZSkgZEwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAgV86VpqAWuXvX6Oro4qJ1tYVIT5DgWpE692Ag422H7yRIr/9j/iKG4Thia/Oflx4TdL+IFJBAyPK9v6zZNZtBgPBynXb048hsP16l2vi0k5Q2JKiPDsEfBhGI+HnxLXEaUWAcVfCsQFvd2A1sxRr67ip5y2wwBelUecP3AjJ+YcxggGaMIIBlgIBATCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE3MDExOTAwMzUxNVowIwYJKoZIhvcNAQkEMRYEFGznDGp6Hwa7X3ynpa9r9rig8JKAMA0GCSqGSIb3DQEBAQUABIGARTepGy+nWW17hHKr7CiIglfGD9qEso3cCLC8O5IRFBm/F34JNorcS6TJpUYfbDpilNBy7T3It/Ng6/kuNB5St/Hao1NL572kTYjcGIIZSf/4O0/xFuNLzISPtFMCNVGUuxFziV/4ya9NDlGQYaMTGM3mtovMZeO1zhOM20yNFFg=-----END PKCS7-----
+">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        </form>
+    </div>
+    <br>
+    <h3  style="border-color: white; border-bottom-width: 8px; border-bottom-style: solid;">Modifyed Traditional:</h3>
+    <div class="inputArea">
+        <ul>
+            <li>
+                <p id="input1">Slot 1</p>
+            </li>
+            <li>
+                <p id="input2">Slot 2</p>
+            </li>
+            <li>
+                <p id="input3">Slot 3</p>
+            </li>
+            <li>
+                <p id="inputWinner">Did You Win?</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="slotimg">
+                <img id="input1Image">
+            </li>
+            <li class="slotimg">
+                <img id="input2Image">
+            </li>
+            <li class="slotimg">
+                <img id="input3Image">
+            </li>
+            <li class="slotimg">
+                <img id="inputWinnerimg">
+            </li>
+        </ul>
+        <button type="button" id="button" onclick="Spin()">$50 To Spin</button>
+    </div>
+    <br>
+    <h3  style="border-color: white; border-bottom-width: 8px; border-bottom-style: solid;">World Leader Version:</h3>
+    <div class="inputArea">
+        <ul>
+            <li>
+                <p id="input1prez">Leader 1</p>
+            </li>
+            <li>
+                <p id="input2prez">Leader 2</p>
+            </li>
+            <li>
+                <p id="input3prez">Leader 3</p>
+            </li>
+            <li>
+                <p id="inputWinnerprez">Did You Conquer The World?</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="slotimg">
+                <img id="input1Imageprez">
+            </li>
+            <li class="slotimg">
+                <img id="input2Imageprez">
+            </li>
+            <li class="slotimg">
+                <img id="input3Imageprez">
+            </li>
+            <li class="slotimg">
+                <img id="inputWinnerprezimg">
+            </li>
+        </ul>
+        <button type="button" id="button" onclick="SpinPrez()">$100 to Spin</button>
+    </div>
+    <br>
+    <h3 style="border-color: white; border-bottom-width: 8px; border-bottom-style: solid;">Make Your Own:</h3>
+    <div class="inputArea">
+        <h4 style="border-color: white;
+            border-bottom-width: 3px;
+            border-bottom-style: ridge;">Items:</h4>
+        <ul>
+            <li>
+                <input id="in1" type="text" placeholder="Item Name">
+            </li>
+            <li>
+                <input id="in2" type="text">
+            </li>
+            <li>
+                <input id="in3" type="text">
+            </li>
+        </ul>
+        <h4 style="border-color: white;
+            border-bottom-width: 3px;
+            border-bottom-style: ridge;">Images:</h4>
+        <ul>
+            <li>
+                <input id="in1img" type="text" placeholder="Image URL">
+            </li>
+            <li>
+                <input id="in2img" type="text">
+            </li>
+            <li>
+                <input id="in3img" type="text">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <p id="in1Output">Custom 1</p>
+            </li>
+            <li>
+                <p id="in2Output">Custom 2</p>
+            </li>
+            <li>
+                <p id="in3Output">Custom 3</p>
+            </li>
+            <li>
+                <p id="inWinner">Did You Win?</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="slotimg">
+                <img id="in1Outputimg">
+            </li>
+            <li class="slotimg">
+                <img id="in2Outputimg">
+            </li>
+            <li class="slotimg">
+                <img id="in3Outputimg">
+            </li>
+        </ul>
+        <button type="button" id="button" onclick="Spin2()">Spin</button>
+    </div>
+</body>
+
+<footer>
+    <script src="Money.js"></script>
+    <script>
+        function Spin() {
+            if (MoneyValue < 50) {
+                alert("Your Broke! You can no longer play. (Try Reloading the page.)")
+                document.getElementById("MoreMoney").innerHTML = "Perhaps a donation can put more money in your LHS Casnio Account"
+            } else {
+                MoneyValue = MoneyValue - 50;
+                var outPut = ["null", "Corn Dogs", "Diamonds", "Apple"];
+                for (var i = 1; i <= 3; i += 1) {
+                    var take = Math.ceil(Math.random() * 3);
+                    var outputText = outPut[take];
+                    var link = null;
+                    if (outputText == "Corn Dogs") {
+                        link = "http://www.clipartkid.com/images/782/corn-dog-png-transparent-mine-n2C49v-clipart.png";
+                    } else if (outputText == "Diamonds") {
+                        link = "http://www.pngall.com/wp-content/uploads/2016/04/Diamond-Free-Download-PNG-180x180.png";
+                    } else if (outputText == "Apple") {
+                        link = "http://www.logospike.com/wp-content/uploads/2015/12/Apple_Logo_Png_07.png";
+                    }
+                    if (i == 1) {
+                        document.getElementById("input1").innerHTML = outputText;
+                        document.getElementById("input1Image").src = link;
+                    } else if (i == 2) {
+                        document.getElementById("input2").innerHTML = outputText;
+                        document.getElementById("input2Image").src = link;
+                    } else if (i == 3) {
+                        document.getElementById("input3").innerHTML = outputText;
+                        document.getElementById("input3Image").src = link;
+                    }
+                }
+                SpinWin();
+            }
+        }
+
+        function SpinWin() {
+            var Vale1 = document.getElementById("input1").innerHTML;
+            var Vale2 = document.getElementById("input2").innerHTML;
+            var Vale3 = document.getElementById("input3").innerHTML;
+            var Winner = document.getElementById("inputWinner");
+            if ((Vale1 == Vale2) && (Vale2 == Vale3) && (Vale1 == Vale3)) {
+                Winner.innerHTML = "Jackpot!!!";
+                document.getElementById("inputWinnerimg").src = "http://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/398/2016/12/09112115/Hi-Low-Jackpot.png"
+                MoneyValue = MoneyValue + 200;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+            } else if ((Vale1 == Vale2) || (Vale2 == Vale3) || (Vale1 == Vale3)) {
+                Winner.innerHTML = "Almost!";
+                MoneyValue = MoneyValue + 10;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+                document.getElementById("inputWinnerimg").src = "";
+            } else {
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+                Winner.innerHTML = "Nope. Try Agian!";
+                document.getElementById("inputWinnerimg").src = "";
+            }
+        }
+
+        function Spin2() {
+            var outPut = ["null"];
+            var In1 = document.getElementById("in1");
+            var In2 = document.getElementById("in2");
+            var In3 = document.getElementById("in3");
+            outPut[1] = In1.value;
+            outPut[2] = In2.value;
+            outPut[3] = In3.value;
+            for (var i = 1; i <= 3; i += 1) {
+                var take = Math.ceil(Math.random() * 3);
+                var outputText = outPut[take];
+                var link = null;
+                if (outputText == outPut[1]) {
+                    link = document.getElementById("in1img").value;
+                } else if (outputText == outPut[2]) {
+                    link = document.getElementById("in2img").value;
+                } else if (outputText == outPut[3]) {
+                    link = document.getElementById("in3img").value;
+                }
+                if (i == 1) {
+                    document.getElementById("in1Output").innerHTML = outputText;
+                    document.getElementById("in1Outputimg").src = link;
+                } else if (i == 2) {
+                    document.getElementById("in2Output").innerHTML = outputText;
+                    document.getElementById("in2Outputimg").src = link;
+                } else if (i == 3) {
+                    document.getElementById("in3Output").innerHTML = outputText;
+                    document.getElementById("in3Outputimg").src = link;
+                }
+            }
+            Spin2Win();
+        }
+
+        function Spin2Win() {
+            var Value1 = document.getElementById("in1Output").innerHTML;
+            var Value2 = document.getElementById("in2Output").innerHTML;
+            var Value3 = document.getElementById("in3Output").innerHTML;
+            var Money1 = document.getElementById("MoneyID");
+            if ((Value1 == Value2) && (Value2 == Value3) && (Value1 == Value3)) {
+                document.getElementById("inWinner").innerHTML = "Jackpot!!!";
+                MoneyValue = MoneyValue + 500;
+            } else if ((Value1 == Value2) || (Value2 == Value3) || (Value1 == Value3)) {
+                document.getElementById("inWinner").innerHTML = "Close!"
+                MoneyValue = MoneyValue + 25;
+            } else {
+                document.getElementById("inWinner").innerHTML = "Nope."
+            }
+        }
+
+        function SpinPrez() {
+            if (MoneyValue < 100) {
+                alert("Your Broke! You can no longer play. (Try Reloading the page.)")
+                document.getElementById("MoreMoney").innerHTML = "Perhaps a donation can put more money in your LHS Casnio Account"
+            } else {
+                MoneyValue = MoneyValue - 100;
+                var outPut = ["null", "Putin", "Trump", "Nazarbayev"];
+                for (var i = 1; i <= 3; i += 1) {
+                    var take = Math.ceil(Math.random() * 3);
+                    var outputText = outPut[take];
+                    var link = null;
+                    if (outputText == "Putin") {
+                        link = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Putin_with_flag_of_Russia.jpg/220px-Putin_with_flag_of_Russia.jpg";
+                    } else if (outputText == "Trump") {
+                        link = "https://upload.wikimedia.org/wikipedia/commons/d/d2/Donald_Trump_August_19,_2015_(cropped).jpg";
+                    } else if (outputText == "Nazarbayev") {
+                        link = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/13_%D1%81%D1%8A%D0%B5%D0%B7%D0%B4_%D0%9D%D0%94%D0%9F_%D0%9D%D1%83%D1%80_%D0%9E%D1%82%D0%B0%D0%BD_(cropped,_Nursultan_Nazarbayev).jpg/220px-13_%D1%81%D1%8A%D0%B5%D0%B7%D0%B4_%D0%9D%D0%94%D0%9F_%D0%9D%D1%83%D1%80_%D0%9E%D1%82%D0%B0%D0%BD_(cropped,_Nursultan_Nazarbayev).jpg";
+                    }
+                    if (i == 1) {
+                        document.getElementById("input1prez").innerHTML = outputText;
+                        document.getElementById("input1Imageprez").src = link;
+                    } else if (i == 2) {
+                        document.getElementById("input2prez").innerHTML = outputText;
+                        document.getElementById("input2Imageprez").src = link;
+                    } else if (i == 3) {
+                        document.getElementById("input3prez").innerHTML = outputText;
+                        document.getElementById("input3Imageprez").src = link;
+                    }
+                }
+                SpinPrezWin();
+            }
+        }
+
+        function SpinPrezWin() {
+            var Vale1 = document.getElementById("input1prez").innerHTML;
+            var Vale2 = document.getElementById("input2prez").innerHTML;
+            var Vale3 = document.getElementById("input3prez").innerHTML;
+            var Winner = document.getElementById("inputWinnerprez");
+            if ((Vale1 == Vale2) && (Vale2 == Vale3) && (Vale1 == Vale3)) {
+                Winner.innerHTML = "You did what Hitler couldn't! The World is yours!";
+                MoneyValue = MoneyValue + 500;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+                document.getElementById("inputWinnerprezimg").src = "http://www.ronpaul.com/wp-content/uploads/2016/04/trump-wall.jpg";
+            } else if ((Vale1 == Vale2) || (Vale2 == Vale3) || (Vale1 == Vale3)) {
+                MoneyValue = MoneyValue + 75;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+                Winner.innerHTML = "Same ending as WWI and II.";
+                document.getElementById("inputWinnerprezimg").src = "";
+            } else {
+                Winner.innerHTML = "Nope. Be like Hitler and try agian.";
+                MoneyValue = MoneyValue - 25;
+                Money1.innerHTML = "You Have: $" + MoneyValue;
+                document.getElementById("inputWinnerprezimg").src = "";
+            }
+        }
+    </script>
+</footer>
+
+</html>

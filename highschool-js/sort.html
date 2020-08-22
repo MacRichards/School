@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<!-----------------------------------------------------------------------
+
+                         Alphabetical Word Sorter
+                            ©2016 Mac Richards
+
+------------------------------------------------------------------------->
+
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical Word Sorter</title>
+</head>
+
+<style>
+    h1 {
+        color: lightcyan;
+        text-align: center;
+        font-family: Arial;
+    }
+
+    h3 {
+        color: whitesmoke;
+        text-align: center;
+        font-family: Arial;
+    }
+
+    body {
+        background-color: dimgray;
+        background-image: url(backgroundplanet.jpg);
+        text-align: center;
+    }
+
+    #sudmit {
+        text-align: center;
+        font-size: 30px;
+        height: 50px;
+        width: 100px;
+    }
+
+    #clearb {
+        font-size: 20px;
+        height: auto;
+        width: auto;
+    }
+
+    #usertext {
+        width: 1000px;
+        height: 300px;
+        font-size: 20px;
+        font-family: Arial;
+    }
+
+    #output {
+        font-size: 20px;
+        font-family: Arial;
+        color: white;
+    }
+</style>
+
+<body>
+    <h1>Alphabetical Word Sorter</h1>
+    <h3>Input:</h3>
+    <textarea id="usertext"></textarea>
+    <br>
+    <button type="button" id="sudmit" onclick="wordsorter()">Sort</button>
+    <h3>Output:</h3>
+    <p id="output"></p>
+    <button type="button" id="clearb" onclick="resettext()" hidden="hidden">Clear</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+        $("#sudmit").click(function() {
+            $("#clearb").show();
+        });
+        $("#clearb").click(function() {
+            $("#clearb").hide();
+        });
+        var xy = "";
+
+        function wordsorter() {
+            var input = document.getElementById("usertext").value;
+            input = input.toLowerCase();
+            var stuff = input.split(" ");
+            var x = stuff.sort();
+            for (var i = 0; i < x.length; i += 1) {
+                xy = xy + x[i] + "<br>";
+            }
+            document.getElementById("output").innerHTML = xy;
+        };
+
+        function resettext() {
+            xy = "";
+            document.getElementById("output").innerHTML = xy;
+            document.getElementById("usertext").value = "";
+        }
+    </script>
+</body>
+
+</html>
