@@ -1,7 +1,7 @@
 //Student: Michael Richards
 //Course: CS 140C
 //Date: 2/15/19
-//Project: Assignment Part 2
+//Project: Assignment Part 3
 //
 //This program will produce a calendar of a specific month.
 
